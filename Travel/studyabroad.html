@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <meta name="keywords" content="travel abroad, study abroad, study in the uk, travel abroad and study, schools abroad, schools in the uk, lagos schools linked abroad, lagos organisation for schooling abroad, ">
+    <meta name="description" content="Reach out to us to travel abroad, study abroad, study in the uk. We help Nigerians get visa to travels abroad and study, we handle their school search for schools abroad and or schools in the uk. getting them quality education abroad and the ability to work as you learn from lagos organisations that deal with studying abroad.">
+    <link rel="icon" href="./picture/TravelSiteLogo.png">
+    <title>study abroad or in the uk with zetconsults consultancy firm</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="./index.html">
+                <img src="./picture/TravelSiteLogo.png" alt="">
+            </a>
+        </div>
+        <div class="navbar">
+            <div class="div">
+                <a class="active" href="./studyabroad.html">Study Abroad</a>
+            </div>
+            <div class="div">
+                <a href="./consultancy.html">Recruitment & HR Consultancy</a>
+            </div>
+            <div class="div">
+                <a href="./health.html">Health Related Trainings</a>
+            </div>
+            <div class="div">
+                <a href="./tourism.html">Tourism</a>
+            </div>
+        </div>
+        </div>  
+        <div id="burger" class="hamburger">
+            <div class="line rot1"></div>
+            <div class="line out"></div>
+            <div class="line rot2"></div>
+        </div>
+    </header>
+    <section>
+        <div class="alone">
+            <a href="./index.html"> < Back to home</a>
+        </div>
+        <div class="hold">
+            <div class="details">
+                <div class="imgHolder">
+                    <img class="imgRender" id="render" src="./picture/study abroad.png" alt="">
+                </div>
+                <h1>STUDY IN THE UK</h1>
+                <p>Our consultancy firm specializes in assisting individuals who aspire to study abroad. We recognize that studying overseas can be a life-changing experience, and we are here to help make that dream a reality. Our team of experts provides personalized guidance to students throughout the entire process, from selecting the right country and university to securing visas and finding accommodations. We understand that every student has unique needs and requirements, and we tailor our services accordingly to ensure that each individual receives the best possible support. Our goal is to simplify the study abroad process and help students achieve their academic and personal goals.</p>
+            </div>
+            <div class="left">
+                <form  id="zetcForm" method="post" enctype="text/plain" name="zetclimited">
+                <h1>SUBSCRIBE</h1>
+                <div class="underline"></div>
+                <div class="field">
+                    
+                    <input type="text" name="sendMail" value="tourism@zetclimited.com" style="display: none;">
+                    <div class="top">
+                        <div class="data small">
+                            <span>First name</span>
+                            <input type="text" name="First_name">
+                        </div>
+                        <div class="data small">
+                            <span>Last name</span>
+                            <input type="text" name="Last_name">
+                        </div>
+                    </div>
+                    <div class="data large">
+                        <span>Mobile Number</span>
+                        <input type="number" name="Number">
+                    </div>                 
+                    <div class="data large">
+                        <span>Email Address</span>
+                        <input type="email" name="mail">
+                    </div>                 
+                <input class="submit" type="submit" value="Submit">                                                                                                                                                                                                                                                                                                                                                                             
+                </div>
+            </form>
+            <div class="contactCard">
+                <h1>Contact us</h1>
+                <div class="underline"></div>
+                <div class="detail">
+                    <img src="./picture/Group 2.png" alt="">
+                    <span>Suite G04, 1 Quality Court, Chancery Lane, London, WC2A 1HR</span>
+                </div>
+                <div class="detail">
+                    <img src="./picture/Vector (7).png" alt="">
+                    <span>info@zetclimited.com</span>
+                </div>
+                <div class="detail">
+                    <img src="./picture/Vector (8).png" alt="">
+                    <span>07380116013</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <div class="errorOrSuccess" id="suc">
+        <span class="data">SUCCESS</span>
+    </div>
+    <footer>
+        <div class="under">
+            <div class="navbar">
+                <a href="./studyabroad.html">Study Abroad</a>
+                <a href="./consultancy.html">Recruitment & HR Consultancy</a>
+                <a href="./health.html">Health Related Trainings</a>
+                <a href="./tourism.html">Tourism</a>
+            </div>
+            <span>Copyright 2023 - Zetc Limited</span>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('jYSSDwJK7GFgMNxpu');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('zetcForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_62harwb', 'template_t2ggaia', this)
+                .then(function() {
+                        document.querySelector("#suc").classList.add("active")
+                        setTimeout(()=>{
+                            document.querySelector("#suc").classList.remove("active")
+                        }, 3000)
+                    }, function(error) {
+                        document.querySelector("#suc").classList.add("active")
+                        document.querySelector("#suc .data").innerHTML = "ERROR"
+                        setTimeout(()=>{
+                            document.querySelector("#suc").classList.remove("active")
+                            document.querySelector("#suc .data").innerHTML = "SUCCESS"
+                        }, 3000)
+                    });
+            });
+
+            document.getElementById('burger').addEventListener('click', (e)=>{
+                if(document.getElementById('burger').className === 'hamburger active'){
+                    document.getElementById('burger').classList.remove('active')
+                    document.querySelector('header .navbar').classList.remove('active')
+                }else{
+                    document.querySelector('header .navbar').classList.add('active')
+                    document.getElementById('burger').classList.add('active')
+                }
+            })
+
+            if (window.innerWidth < 1000){
+                document.getElementById('render').src = './picture/studyImg.png'
+            }else{
+                document.getElementById('render').src = './picture/study abroad.png'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./picture/TravelSiteLogo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="travel, medical school, travel abroad, study abroad, tourism abroad, consultancy">
+    <meta name="description" content="You looking to travel or futher your studies abroad or the uk, you looking to learn health relateg design">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulting Agency</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="./index.html">
+                <img src="./picture/TravelSiteLogo.png" alt="">
+            </a>
+        </div>
+        <div class="navbar">
+            <div class="div">
+                <a href="./studyabroad.html">Study Abroad</a>
+            </div>
+            <div class="div">
+                <a href="./consultancy.html">Recruitment & HR Consultancy</a>
+            </div>
+            <div class="div">
+                <a href="./health.html">Health Related Trainings</a>
+            </div>
+            <div class="div">
+                <a href="./tourism.html">Tourism</a>
+            </div>
+        </div>
+        <div id="burger" class="hamburger">
+            <div class="line rot1"></div>
+            <div class="line out"></div>
+            <div class="line rot2"></div>
+        </div>
+    </header>
+    <section>
+        <div class="heroImg">
+            <img src="./picture/study abroad goal.png" alt="">
+            <div class="abs">
+                <span class="large">Unlock your potential and achieve your career and study abroad goals.</span>
+                <span class="textSmall"> With our expert consultancy services specializing in job opportunities, studying abroad, tourism, and health related trainings.</span>
+            </div>
+        </div>
+        <div class="ourServices">
+            <h2>Our Services</h2>
+            <div class="left">
+                <div class="aTagHold">
+                    <a href="./studyabroad.html">
+                        <img id="study" src="./picture/study abroad small.png" alt="">
+                        <span>Study abroad</span>
+                    </a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="aTagHold full">
+                    <a href="./consultancy.html">
+                        <img id="consultancy" src="./picture/recuirtment and consultancy small.png" alt="">
+                        <span>Recruitment & HR Consultancy</span>
+                    </a>
+                </div>
+                <div class="aTagHold short">
+                    <a href="./health.html">
+                        <img id="health" src="./picture/healty related training small.png" alt="">
+                        <span>Health Related Trainings</span>
+                    </a>
+                </div>
+                <div class="aTagHold short">
+                    <a href="./tourism.html">
+                        <img id="tourism" src="./picture/tourism small.png" alt="">
+                        <span>Tourism</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="newsAndContact">
+            <form  id="zetcForm" method="post" enctype="text/plain" name="zetclimited">
+                <h1>SUBSCRIBE</h1>
+                <div class="underline"></div>
+                <div class="field">
+                    <div class="top">
+                        <div class="data small">
+                            <span>First name</span>
+                            <input type="text" name="First_name">
+                        </div>
+                        <div class="data small">
+                            <span>Last name</span>
+                            <input type="text" name="Last_name">
+                        </div>
+                    </div>
+                    <div class="data large">
+                        <span>Mobile Number</span>
+                        <input type="number" name="Number">
+                    </div>                 
+                    <input type="text" name="sendMail" value="info@zetclimited.com" style="display: none;">
+                    <div class="data large">
+                        <span>Email Address</span>
+                        <input type="email" name="mail">
+                    </div>                                                 
+                <input id="submit" type="submit" class="submit" value="submit">                                                                                                                                                                                                                                                                                                                                    
+                </div>
+            </form>
+            <div class="contactCard">
+                <h1>Contact Us</h1>
+                <div class="underline"></div>
+                <div class="detail">
+                    <img src="./picture/Group 2.png" alt="">
+                    <span>Suite G04, 1 Quality Court, Chancery Lane, London, WC2A 1HR</span>
+                </div>
+                <div class="detail">
+                    <img src="./picture/Vector (7).png" alt="">
+                    <span>info@zetclimited.com</span>
+                </div>
+                <div class="detail">
+                    <img src="./picture/Vector (8).png" alt="">
+                    <span>07380116013</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="errorOrSuccess" id="suc">
+        <span class="data">SUCCESS</span>
+    </div>
+    <footer>
+        <div class="under">
+            <div class="navbar">
+                <a href="./studyabroad.html">Study Abroad</a>
+                <a href="./consultancy.html">Recruitment & HR Consultancy</a>
+                <a href="./health.html">Health Related Trainings</a>
+                <a href="./tourism.html">Tourism</a>
+            </div>
+            <span>Copyright 2023 - Zetc Limited</span>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('jYSSDwJK7GFgMNxpu');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('zetcForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_62harwb', 'template_t2ggaia', this)
+                .then(function() {
+                        document.querySelector("#suc").classList.add("active")
+                        setTimeout(()=>{
+                            document.querySelector("#suc").classList.remove("active")
+                        }, 3000)
+                    }, function(error) {
+                        console.log(error)
+                        document.querySelector("#suc").classList.add("active")
+                        document.querySelector("#suc .data").innerHTML = "ERROR"
+                        setTimeout(()=>{
+                            document.querySelector("#suc").classList.remove("active")
+                            document.querySelector("#suc .data").innerHTML = "SUCCESS"
+                        }, 3000)
+                    });
+            });
+
+            document.getElementById('burger').addEventListener('click', (e)=>{
+                if(document.getElementById('burger').className === 'hamburger active'){
+                    document.getElementById('burger').classList.remove('active')
+                    document.querySelector('header .navbar').classList.remove('active')
+                }else{
+                    document.querySelector('header .navbar').classList.add('active')
+                    document.getElementById('burger').classList.add('active')
+                }
+            })
+            if (window.innerWidth < 1000){
+                document.getElementById('study').src = './picture/mobile study.png'
+                document.getElementById('consultancy').src = './picture/mobile recruit.png'
+                document.getElementById('health').src = './picture/mobile health.png'
+                document.getElementById('tourism').src = './picture/mobile tourism.png'
+            }else{
+                document.getElementById('study').src = './picture/study abroad small.png'
+                document.getElementById('consultancy').src = './picture/recuirtment and consultancy small.png'
+                document.getElementById('health').src = './picture/healty related training small.png'
+                document.getElementById('tourism').src = './picture/tourism small.png'
+            }
+        }
+    </script>
+</body>
+</html>

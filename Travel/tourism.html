@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./picture/TravelSiteLogo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="looking to have a place for you to relax and chill before outside the ciunty. we are a small company is solid">
+    <link rel="stylesheet" href="style.css">
+    <title>Consultation on tourism</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="./index.html">
+                <img src="./picture/TravelSiteLogo.png" alt="">
+            </a>
+        </div>
+        <div class="navbar">
+        <div class="div">
+            <a href="./studyabroad.html">Study Abroad</a>
+        </div>
+        <div class="div">
+            <a href="./consultancy.html">Recruitment & HR Consultancy</a>
+        </div>
+        <div class="div">
+            <a href="./health.html">Health Related Trainings</a>
+        </div>
+        <div class="div">
+            <a class="active" href="./tourism.html">Tourism</a>
+        </div>
+    </div>
+        </div>
+        <div id="burger" class="hamburger">
+            <div class="line rot1"></div>
+            <div class="line out"></div>
+            <div class="line rot2"></div>
+        </div>
+    </header>
+    <section>
+        <div class="alone">
+            <a href="./index.html"> < Back to home</a>
+        </div>
+        <div class="hold">
+            <div class="details">
+                <div class="imgHolder">
+                    <img class="imgRender" id="render" src="./picture/tourism.png" alt="">
+                </div>
+                <h1>Tourism</h1>
+                <p>At our consultancy firm, we understand that planning a trip can be overwhelming, time-consuming, and even stressful. That's why we offer tailored travel planning services to help make your trip seamless and stress-free. Our team of experienced travel consultants will work with you to create a customized travel itinerary that fits your preferences, budget, and schedule. From booking flights and accommodations to arranging transportation and activities, we'll take care of every detail, ensuring that your trip is enjoyable and hassle-free. With our expertise, you can sit back, relax, and look forward to an unforgettable travel experience.</p>
+            </div>
+            <div class="left">
+            <form id="zetcForm" name="zetclimited" method="post" enctype="text/plain">
+                <h1>SUBSCRIBE</h1>
+                <div class="underline"></div>
+                <div class="field">
+                    
+                    <input type="text" name="sendMail" value="tourism@zetclimited.com" style="display: none;">
+                    <div class="top">
+                        <div class="data small">
+                            <span>First name</span>
+                            <input type="text" name="First_name">
+                        </div>
+                        <div class="data small">
+                            <span>Last name</span>
+                            <input type="text" name="Last_name">
+                        </div>
+                    </div>
+                    <div class="data large">
+                        <span>Mobile Number</span>
+                        <input type="number" name="Number">
+                    </div>                 
+                    <div class="data large">
+                        <span>Email Address</span>
+                        <input type="email" name="mail">
+                    </div>                 
+                <input class="submit" type="submit" value="Submit">                                                                                                                                                                                                                                                                                                                                                                             
+                </div>
+            </form>
+            <div class="contactCard">
+                <h1>Contact us</h1>
+                <div class="underline"></div>
+                <div class="detail">
+                    <img src="./picture/Group 2.png" alt="">
+                    <span>Suite G04, 1 Quality Court, Chancery Lane, London, WC2A 1HR</span>
+                </div>
+                <div class="detail">
+                    <img src="./picture/Vector (7).png" alt="">
+                    <span>info@zetclimited.com</span>
+                </div>
+                <div class="detail">
+                    <img src="./picture/Vector (8).png" alt="">
+                    <span>07380116013</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <div class="errorOrSuccess" id="suc">
+        <span class="data">SUCCESS</span>
+    </div>
+    <footer>
+        <div class="under">
+            <div class="navbar">
+                <a href="./studyabroad.html">Study Abroad</a>
+                <a href="./consultancy.html">Recruitment & HR Consultancy</a>
+                <a href="./health.html">Health Related Trainings</a>
+                <a href="./tourism.html">Tourism</a>
+            </div>
+            <span>Copyright 2023 - Zetc Limited</span>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('jYSSDwJK7GFgMNxpu');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('zetcForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_62harwb', 'template_t2ggaia', this)
+                    .then(function() {
+                        document.querySelector("#suc").classList.add("active")
+                        setTimeout(()=>{
+                            document.querySelector("#suc").classList.remove("active")
+                        }, 3000)
+                    }, function(error) {
+                        document.querySelector("#suc").classList.add("active")
+                        document.querySelector("#suc .data").innerHTML = "ERROR"
+                        setTimeout(()=>{
+                            document.querySelector("#suc").classList.remove("active")
+                            document.querySelector("#suc .data").innerHTML = "SUCCESS"
+                        }, 3000)
+                    });
+            });
+
+            document.getElementById('burger').addEventListener('click', (e)=>{
+                if(document.getElementById('burger').className === 'hamburger active'){
+                    document.getElementById('burger').classList.remove('active')
+                    document.querySelector('header .navbar').classList.remove('active')
+                }else{
+                    document.querySelector('header .navbar').classList.add('active')
+                    document.getElementById('burger').classList.add('active')
+                }
+            })
+
+            if (window.innerWidth < 1000){
+                document.getElementById('render').src = './picture/tourismImg.png'
+            }else{
+                document.getElementById('render').src = './picture/tourism.png'
+            }
+        }
+    </script>
+</body>
+</html>
